@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="task.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Task Manager</h1>
+        <div class="lists-container">
+          <div class="list" id="todoList">
+            <h2>To Do</h2>
+          </div>
+          <div class="list" id="doingList">
+            <h2>Doing</h2>
+          </div>
+          <div class="list" id="onHoldList">
+            <h2>On Hold</h2>
+          </div>
+          <div class="list" id="doneList">
+            <h2>Done</h2>
+          </div>
+        </div>
+        <button id="newTaskBtn" onclick="openForm()">+ New Task</button>
+        <div id="taskForm" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2>New Task</h2>
+            <form id="newTaskForm">
+              <input type="text" id="taskTitle" placeholder="Task" required />
+              <textarea
+                id="taskDescription"
+                placeholder="Task Description"
+                required
+              ></textarea>
+              <select id="taskPriority" required>
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+              </select>
+              <input type="date" id="taskDate" required />
+              <button type="submit">Add Task</button>
+            </form>
+          </div>
+        </div>
+        <div id="taskDetails" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeTaskDetails()">&times;</span>
+            <div id="taskDetailsContent"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="headerAndFooter"></div>
+    <script src="header/hfloader.js"></script>
+    <script src="task.js"></script>
+  </body>
+</html>

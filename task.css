@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    max-height: 100vh;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 110px auto;
+    padding: 20px;
+    background-color: rgba(1, 1, 1, 0.5);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.lists-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 700px;
+    padding: 10px;
+}
+
+.list {
+    position: relative; /* Ensure position context for pseudo-elements */
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+.list h2 {
+    margin-top: 0;
+    color: black;
+    text-align: center; /* Center list names */
+    position: absolute; /* Position list names absolutely */
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%); /* Center list names horizontally */
+    background-color: rgba(255, 255, 255, 0.315); /* Background color for list names */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#todoList h2{
+    background-color: rgba(58, 58, 58, 0.3);
+}
+
+#doingList h2{
+    background-color: rgba(255, 123, 0, 0.3);
+}
+
+#onHoldList h2{
+    background-color: rgba(140, 0, 255, 0.3);
+}
+
+#doneList h2{
+    background-color: rgba(136, 255, 0, 0.3);
+}
+
+.task {
+    background-color: #ffffff59;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.task:hover {
+    background-color: #f0f0f0;
+}
+
+.task .priority {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.task-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+#newTaskForm {
+    height: 310px;
+}
+
+#newTaskForm input, textarea, #taskPriority{
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    position: relative;
+    max-width: 500px;
+    max-height: 80vh; /* Adjusted max height */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+textarea, input[type="text"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #8d8d8d;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+}
+
+button:hover {
+    background-color: #b6b6b6;
+}
+
+#newTaskBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
+#taskDetailsContent textarea {
+    color: white;
+}
+
+/* Add some margin between the buttons */
+#taskDetailsContent button {
+    margin-right: 10px;
+}
